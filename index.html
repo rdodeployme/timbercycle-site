@@ -59,9 +59,13 @@
     <span class="eyebrow">A Recycle Group company</span>
     <h1>Two things happen<br>to your <span class="tan">pallets</span>.</h1>
     <p class="lead">They go back to work, or they get shredded. Timbercycle recovers timber pallets at scale across Victoria &mdash; repairing what can be reused, and turning everything else into mulch, fibre and biomass feedstock.</p>
-    <div class="btn-row">
-      <a class="btn btn--primary" href="pallet-calculator.html">Work out your volume</a>
-      <a class="btn btn--ghost" href="bulk-pallet-programs.html">Bulk pallet programs</a>
+    <div class="mini">
+      <div>
+        <label for="mini-ppw">Pallets a week</label>
+        <input id="mini-ppw" type="number" min="1" max="20000" value="400" inputmode="numeric">
+      </div>
+      <div class="mini__out"><b id="mini-out">20,800</b>pallets a year leaving your site</div>
+      <a class="btn btn--primary mini__go" id="mini-go" href="pallet-calculator.html?ppw=400">See the full picture</a>
     </div>
   </div>
 </section>
@@ -70,6 +74,62 @@
   <div class="wrap">
     <span class="eyebrow">Two streams</span>
     <h2>One collection. Two outcomes.</h2>
+    
+<div class="flow-wrap">
+  <span class="eyebrow">How it runs</span>
+  <svg class="flow" viewBox="0 0 1000 300" role="img" aria-label="Pallets are collected, graded, then either repaired and returned to service or shredded into mulch, fibre and feedstock">
+    <defs>
+      <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#E9B57C"/></marker>
+      <marker id="ah2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#8E877E"/></marker>
+    </defs>
+    <!-- your site -->
+    <rect class="box" x="20" y="118" width="150" height="64" rx="8"/>
+    <rect class="plt" x="40" y="164" width="44" height="6" rx="1"/>
+    <rect class="plt" x="40" y="154" width="44" height="6" rx="1"/>
+    <rect class="plt" x="40" y="144" width="44" height="6" rx="1"/>
+    <rect class="plt" x="40" y="134" width="44" height="6" rx="1"/>
+    <text class="lbl" x="100" y="146">Your site</text>
+    <text class="sub" x="100" y="166">pallets stacking up</text>
+    <!-- collect -->
+    <path class="dash" d="M172 150 H228" marker-end="url(#ah)"/>
+    <rect class="box" x="232" y="118" width="150" height="64" rx="8"/>
+    <text class="lbl" x="307" y="146" text-anchor="middle">Collect</text>
+    <text class="sub" x="307" y="166" text-anchor="middle">scheduled, no sorting</text>
+    <!-- grade -->
+    <path class="dash" d="M384 150 H440" marker-end="url(#ah)"/>
+    <rect class="box" x="444" y="118" width="150" height="64" rx="8"/>
+    <text class="lbl" x="519" y="146" text-anchor="middle">Grade</text>
+    <text class="sub" x="519" y="166" text-anchor="middle">at our yard, not yours</text>
+    <!-- split up: repair -->
+    <path class="dash" d="M596 140 C640 140 640 60 660 60 H668" marker-end="url(#ah)"/>
+    <rect class="box" x="672" y="28" width="130" height="64" rx="8"/>
+    <text class="lbl" x="737" y="56" text-anchor="middle">Repair</text>
+    <text class="sub" x="737" y="76" text-anchor="middle">boards, bearers, fixings</text>
+    <path class="dash" d="M804 60 H838" marker-end="url(#ah)"/>
+    <rect class="box box--tan" x="842" y="28" width="140" height="64" rx="8"/>
+    <text class="lbl" x="912" y="56" text-anchor="middle" fill="#0B0B0B" style="fill:#0B0B0B">Back to work</text>
+    <text class="sub" x="912" y="76" text-anchor="middle" style="fill:#4a3a22">reconditioned pallets</text>
+    <text class="num" x="626" y="40" text-anchor="middle">01</text>
+    <!-- split down: shred -->
+    <path class="dash dash--dark" d="M596 160 C640 160 640 240 660 240 H668" marker-end="url(#ah2)"/>
+    <rect class="box" x="672" y="208" width="130" height="64" rx="8"/>
+    <text class="lbl" x="737" y="236" text-anchor="middle">Shred</text>
+    <text class="sub" x="737" y="256" text-anchor="middle">anything past repair</text>
+    <path class="dash dash--dark" d="M804 240 H838" marker-end="url(#ah2)"/>
+    <rect class="box" x="842" y="208" width="140" height="64" rx="8"/>
+    <text class="lbl" x="912" y="232" text-anchor="middle">Mulch, fibre,</text>
+    <text class="lbl" x="912" y="252" text-anchor="middle">feedstock</text>
+    <text class="num" x="626" y="292" text-anchor="middle" style="fill:#8E877E">02</text>
+  </svg>
+  <div class="flow-mobile">
+    <div>Your site<span>Pallets stacking up</span></div>
+    <div>Collect<span>Scheduled, no sorting at your end</span></div>
+    <div>Grade<span>At our yard, not yours</span></div>
+    <div class="tan">01 &middot; Repair &rarr; back to work<span>Reconditioned pallets into the supply chain</span></div>
+    <div>02 &middot; Shred &rarr; mulch, fibre, feedstock<span>Anything past repair, never landfill</span></div>
+  </div>
+</div>
+
   </div>
   <div class="wrap" style="margin-top:38px">
     <div class="streams">
@@ -143,6 +203,20 @@
   </div>
 </section>
 
+<section class="section dark">
+  <div class="wrap">
+    <span class="eyebrow">Your industry</span>
+    <h2>Same two streams. Different pile.</h2>
+    <div class="loc-grid">
+      <a href="for-ports-and-shipping.html"><strong>Ports &amp; shipping</strong><span>Timber off disembarked freight</span></a>
+      <a href="for-freight-and-3pl.html"><strong>Freight &amp; 3PL</strong><span>Constant inbound pallet flow</span></a>
+      <a href="for-distribution-centres.html"><strong>Distribution centres</strong><span>Pallets in, cartons out</span></a>
+      <a href="for-manufacturers.html"><strong>Manufacturers</strong><span>Raw materials arrive on timber</span></a>
+      <a href="for-councils-and-transfer-stations.html"><strong>Councils &amp; transfer stations</strong><span>Timber out of the incoming stream</span></a>
+    </div>
+  </div>
+</section>
+
 <section class="section wash">
   <div class="wrap">
     <span class="eyebrow">Where we collect</span>
@@ -185,7 +259,12 @@
     <div class="foot-grid">
       <div>
         <span class="brand-foot"><img src="https://timbercycle.com.au/wp-content/uploads/2026/02/Timber-Cycle-04.png" alt="Timbercycle" width="170" height="27"></span>
-        <p class="foot-note">Timber pallet recovery, reuse and recycling at scale. A Recycle Group company, based in North Geelong, Victoria.</p>
+        <p class="foot-note">Timber pallet recovery, reuse and recycling at scale. A Recycle Group company.</p>
+        <ul style="margin-top:18px">
+          <li><a href="tel:134455">13 44 55</a> &nbsp;&middot;&nbsp; <a href="tel:0433225511">0433 225 511</a></li>
+          <li><a href="mailto:info@timbercycle.com.au">info@timbercycle.com.au</a></li>
+          <li>116 Furner Avenue, North Geelong VIC</li>
+        </ul>
       </div>
       <div>
         <h4>What we do</h4>
@@ -194,9 +273,21 @@
           <li><a href="timber-recycling.html">Timber recycling &amp; mulch</a></li>
           <li><a href="bulk-pallet-programs.html">Bulk pallet programs</a></li>
           <li><a href="pallet-calculator.html">Pallet calculator</a></li>
+          <li><a href="program-builder.html">Program builder</a></li>
           <li><a href="products.html">Products</a></li>
           <li><a href="faq.html">Questions</a></li>
           <li><a href="capability-statement.html">Capability statement</a></li>
+          <li><a href="about.html">About Timbercycle</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Your industry</h4>
+        <ul>
+          <li><a href="for-ports-and-shipping.html">Ports &amp; shipping</a></li>
+          <li><a href="for-freight-and-3pl.html">Freight &amp; 3PL</a></li>
+          <li><a href="for-distribution-centres.html">Distribution centres</a></li>
+          <li><a href="for-manufacturers.html">Manufacturers</a></li>
+          <li><a href="for-councils-and-transfer-stations.html">Councils &amp; transfer stations</a></li>
         </ul>
       </div>
       <div>
@@ -207,16 +298,6 @@
           <li><a href="pallet-collection-laverton-altona.html">Laverton &amp; Altona</a></li>
           <li><a href="pallet-collection-truganina-derrimut.html">Truganina &amp; Derrimut</a></li>
           <li><a href="pallet-collection-dandenong.html">Dandenong</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Get in touch</h4>
-        <ul>
-          <li><a href="tel:134455">13 44 55</a></li>
-          <li><a href="tel:0433225511">0433 225 511</a></li>
-          <li><a href="mailto:info@timbercycle.com.au">info@timbercycle.com.au</a></li>
-          <li>116 Furner Avenue<br>North Geelong VIC</li>
-          <li><a href="about.html">About Timbercycle</a></li>
         </ul>
       </div>
     </div>

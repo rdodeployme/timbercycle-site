@@ -93,6 +93,8 @@
       ? 'covered in mulch, 75 mm deep, every year.'
       : 'of ground covered in mulch, 75 mm deep, every year.';
 
+    var bl = el('calc-build');
+    if (bl) bl.href = 'program-builder.html?ppw=' + Math.round(ppw) + '&sites=' + Math.max(sites, 1) + '&pct=' + Math.round(pct);
     el('v-ppw').textContent = n0(ppw);
     el('v-pct').textContent = Math.round(pct) + '%';
     el('v-sites').textContent = n0(Math.max(sites, 1));
@@ -164,4 +166,144 @@
       }
     });
   }
+})();
+
+/* ============================================================
+   v3 — reveal, count-up, hero mini calculator, program builder
+   ============================================================ */
+(function () {
+  'use strict';
+  document.documentElement.classList.add('js');
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var fmt = function (v) { return Math.round(v).toLocaleString('en-AU'); };
+
+  /* reveal */
+  var rv = document.querySelectorAll('.rv');
+  if (rv.length && 'IntersectionObserver' in window && !reduce) {
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { rootMargin: '0px 0px -8% 0px' });
+    rv.forEach(function (n) { io.observe(n); });
+  } else { rv.forEach(function (n) { n.classList.add('in'); }); }
+
+  /* count-up for static metrics marked data-count */
+  var cu = document.querySelectorAll('[data-count]');
+  if (cu.length && 'IntersectionObserver' in window && !reduce) {
+    var io2 = new IntersectionObserver(function (es) {
+      es.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        var n = e.target, end = parseFloat(n.getAttribute('data-count')), t0 = null;
+        var step = function (ts) {
+          if (!t0) t0 = ts;
+          var p = Math.min((ts - t0) / 900, 1), ease = 1 - Math.pow(1 - p, 3);
+          n.textContent = fmt(end * ease);
+          if (p < 1) requestAnimationFrame(step);
+        };
+        requestAnimationFrame(step); io2.unobserve(n);
+      });
+    }, { threshold: .4 });
+    cu.forEach(function (n) { io2.observe(n); });
+  }
+
+  /* hero mini calculator */
+  var mi = document.getElementById('mini-ppw');
+  if (mi) {
+    var out = document.getElementById('mini-out'), go = document.getElementById('mini-go');
+    var upd = function () {
+      var v = parseFloat(mi.value) || 0;
+      out.textContent = fmt(v * 52);
+      go.href = 'pallet-calculator.html?ppw=' + Math.round(v);
+    };
+    mi.addEventListener('input', upd); upd();
+  }
+
+  /* calculator: accept ?ppw=&sites=&pct= */
+  var q = {};
+  location.search.replace(/^\?/, '').split('&').forEach(function (kv) {
+    var p = kv.split('='); if (p[0]) q[decodeURIComponent(p[0])] = decodeURIComponent(p[1] || '');
+  });
+  var setv = function (id, v) {
+    var n = document.getElementById(id); if (n && v !== undefined && v !== '') { n.value = v; n.dispatchEvent(new Event('input', { bubbles: true })); }
+  };
+  if (document.getElementById('calc')) {
+    setv('ppw-n', q.ppw); setv('ppw', q.ppw); setv('sites', q.sites); setv('pct', q.pct);
+  }
+
+  /* program builder */
+  var sheet = document.getElementById('sheet');
+  if (!sheet) return;
+  var el = function (id) { return document.getElementById(id); };
+  var read = function (id) { return parseFloat(el(id).value) || 0; };
+  var b = {};
+
+  function build() {
+    var ppw = read('b-ppw'), sites = Math.max(read('b-sites'), 1), pct = read('b-pct');
+    var kg = 25;
+    var perYear = ppw * 52 * sites, tonnes = perYear * kg / 1000;
+    var reuse = perYear * pct / 100, shredT = (perYear - reuse) * kg / 1000;
+    var perWeekAll = ppw * sites;
+    var freq = perWeekAll >= 1500 ? 'Multiple collections per week' :
+               perWeekAll >= 500  ? 'Weekly collection' :
+               perWeekAll >= 150  ? 'Fortnightly collection' : 'Monthly or on-call collection';
+    var kit  = perWeekAll >= 1500 ? 'Trailer or bulk bin per site, swapped on schedule' :
+               perWeekAll >= 500  ? 'Pallet cages or a trailer per site' :
+               perWeekAll >= 150  ? 'Pallet cages positioned at your stacking point' : 'Collection from your existing stack, no equipment needed';
+
+    el('s-co').textContent = el('b-co').value || 'Your company';
+    el('s-loc').textContent = el('b-loc').value || 'Victoria';
+    el('s-date').textContent = new Date().toLocaleDateString('en-AU', { day: 'numeric', month: 'long', year: 'numeric' });
+    el('s-ppw').textContent = fmt(ppw);
+    el('s-sites').textContent = fmt(sites);
+    el('s-pct').textContent = Math.round(pct) + '%';
+    el('s-year').textContent = fmt(perYear);
+    el('s-tonnes').textContent = fmt(tonnes);
+    el('s-reuse').textContent = fmt(reuse);
+    el('s-shred').textContent = fmt(shredT);
+    el('s-freq').textContent = freq;
+    el('s-kit').textContent = kit;
+    el('v-b-ppw').textContent = fmt(ppw);
+    el('v-b-sites').textContent = fmt(sites);
+    el('v-b-pct').textContent = Math.round(pct) + '%';
+
+    b = { ppw: ppw, sites: sites, pct: pct, perYear: perYear, tonnes: tonnes, reuse: reuse, shredT: shredT, freq: freq, kit: kit };
+  }
+  ['b-ppw', 'b-sites', 'b-pct', 'b-co', 'b-loc'].forEach(function (id) {
+    var n = el(id); if (n) { n.addEventListener('input', build); n.addEventListener('change', build); }
+  });
+  setv('b-ppw', q.ppw); setv('b-sites', q.sites); setv('b-pct', q.pct);
+  build();
+
+  function text() {
+    return [
+      'TIMBERCYCLE PALLET PROGRAM SUMMARY',
+      'Prepared for: ' + (el('b-co').value || 'Your company'),
+      'Sites: ' + el('s-loc').textContent,
+      '',
+      'SITE PROFILE',
+      'Pallets per week per site: ' + fmt(b.ppw),
+      'Number of sites: ' + fmt(b.sites),
+      'Estimated reusable share: ' + Math.round(b.pct) + '%',
+      '',
+      'ANNUAL VOLUMES (est.)',
+      'Pallets: ' + fmt(b.perYear),
+      'Timber: ' + fmt(b.tonnes) + ' tonnes',
+      'Back into service: ' + fmt(b.reuse) + ' pallets',
+      'Shredded to mulch / fibre: ' + fmt(b.shredT) + ' tonnes',
+      '',
+      'PROPOSED OPERATION',
+      'Collection: ' + b.freq,
+      'Equipment: ' + b.kit,
+      'Commercial structure: modelled against these volumes after site assessment.',
+      ''
+    ].join('\n');
+  }
+  var pb = el('b-print'); if (pb) pb.addEventListener('click', function () { window.print(); });
+  var sb = el('b-send');
+  if (sb) sb.addEventListener('click', function () {
+    var who = [];
+    ['b-name', 'b-email', 'b-phone'].forEach(function (id) { var n = el(id); if (n && n.value) who.push(n.previousElementSibling.textContent.trim() + ': ' + n.value); });
+    window.location.href = 'mailto:info@timbercycle.com.au?subject=' + encodeURIComponent('Pallet program summary - ' + (el('b-co').value || 'enquiry')) +
+      '&body=' + encodeURIComponent(who.join('\n') + '\n\n' + text());
+    var m = el('b-msg'); if (m) m.classList.add('show');
+  });
 })();
