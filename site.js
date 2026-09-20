@@ -307,3 +307,26 @@
     var m = el('b-msg'); if (m) m.classList.add('show');
   });
 })();
+
+/* ============================================================
+   v5 — dropdown navigation (click/keyboard; hover handled in CSS)
+   ============================================================ */
+(function () {
+  var dds = document.querySelectorAll('.dd');
+  if (!dds.length) return;
+  function closeAll(except) {
+    dds.forEach(function (d) { if (d !== except) { d.classList.remove('open'); d.querySelector('.dd__btn').setAttribute('aria-expanded', 'false'); } });
+  }
+  dds.forEach(function (d) {
+    var btn = d.querySelector('.dd__btn');
+    btn.addEventListener('click', function (e) {
+      e.preventDefault(); e.stopPropagation();
+      var open = !d.classList.contains('open');
+      closeAll(d);
+      d.classList.toggle('open', open);
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  });
+  document.addEventListener('click', function (e) { if (!e.target.closest('.dd')) closeAll(); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeAll(); });
+})();

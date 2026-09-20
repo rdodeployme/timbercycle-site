@@ -564,3 +564,52 @@ html.js .rv.in{opacity:1;transform:none}
 .next b{display:block;font-family:"Poppins",sans-serif;font-weight:800;font-size:1.6rem;color:var(--timber-2);letter-spacing:-.03em;margin-bottom:10px}
 .next strong{display:block;font-family:"Poppins",sans-serif;font-weight:600;margin-bottom:6px;color:var(--ink)}
 .next span{color:var(--muted);font-size:.93rem}
+
+/* ============================================================
+   v5 — desktop dropdown navigation
+   ============================================================ */
+.nav{gap:6px}
+.nav .nav__top{
+  color:#CFC9C1;text-decoration:none;font-size:.9rem;font-weight:500;background:none;border:0;
+  padding:10px 12px;border-radius:8px;cursor:pointer;font-family:inherit;display:inline-flex;align-items:center;gap:7px;
+  border-bottom:0;transition:background .15s,color .15s;white-space:nowrap;line-height:1;
+}
+.nav .nav__top:hover,.dd.open>.dd__btn,.dd:hover>.dd__btn{color:#fff;background:rgba(255,255,255,.07)}
+.nav .nav__top[aria-current="page"],.dd.is-here>.dd__btn{color:#fff;box-shadow:inset 0 -2px 0 var(--timber)}
+.dd__btn i{width:7px;height:7px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(45deg) translateY(-2px);opacity:.7}
+.dd{position:relative}
+.dd__menu{
+  position:absolute;top:calc(100% + 10px);left:0;min-width:300px;background:#141414;border:1px solid var(--line-dark);
+  border-radius:12px;padding:12px;box-shadow:0 20px 50px rgba(0,0,0,.45);opacity:0;visibility:hidden;transform:translateY(6px);
+  transition:opacity .16s ease,transform .16s ease,visibility 0s linear .16s;z-index:80;display:grid;gap:8px;
+}
+.dd__menu--2{grid-template-columns:1fr 1fr;min-width:600px;gap:16px}
+.dd__menu::before{content:"";position:absolute;left:0;right:0;top:-12px;height:12px}
+@media (min-width:941px){.dd:hover>.dd__menu,.dd.open>.dd__menu,.dd:focus-within>.dd__menu{opacity:1;visibility:visible;transform:none;transition-delay:0s}}
+.dd__col h5{margin:6px 10px 6px;font-size:.68rem;letter-spacing:.17em;text-transform:uppercase;color:var(--timber);font-weight:600}
+.dd__col ul{list-style:none;margin:0;padding:0}
+.dd__col li a{display:block;padding:9px 10px;border-radius:8px;text-decoration:none;transition:background .12s;border:0}
+.dd__col li a:hover{background:rgba(255,255,255,.07)}
+.dd__col li a b{display:block;color:#fff;font-family:"Poppins",sans-serif;font-weight:600;font-size:.92rem;line-height:1.25}
+.dd__col li a span{display:block;color:#9C968E;font-size:.8rem;margin-top:2px}
+/* right-aligned menus near the edge */
+.dd:nth-last-child(2) .dd__menu,.dd:nth-last-child(3) .dd__menu{left:auto;right:0}
+
+@media (max-width:1100px) and (min-width:941px){.nav .nav__top{font-size:.85rem;padding:10px 9px}.dd__menu--2{min-width:560px}}
+
+@media (max-width:940px){
+  .nav{gap:0}
+  .nav .nav__top{display:flex;width:100%;justify-content:space-between;padding:15px 0;border-bottom:1px solid var(--line-dark);border-radius:0;font-size:1.02rem}
+  .nav .nav__top[aria-current="page"],.dd.is-here>.dd__btn{box-shadow:none;color:var(--timber)}
+  .dd{position:static}
+  .dd__btn i{transition:transform .15s}
+  .dd.open>.dd__btn i{transform:rotate(225deg) translateY(-2px)}
+  .dd__menu,.dd__menu--2{
+    position:static;min-width:0;opacity:1;visibility:visible;transform:none;box-shadow:none;border:0;border-radius:0;
+    background:transparent;padding:4px 0 10px 14px;display:none;grid-template-columns:1fr;gap:4px;
+  }
+  .dd.open>.dd__menu{display:grid}
+  .dd__menu::before{display:none}
+  .dd__col li a{padding:9px 8px}
+  .dd__col li a span{display:none}
+}
