@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pallet Program Calculator | Timbercycle</title>
+<meta name="description" content="Work out how many timber pallets your sites generate in a year, the tonnage, how many could be reused, and how much becomes mulch instead of landfill.">
+<link rel="canonical" href="https://rdodeployme.github.io/timbercycle-site/pallet-calculator.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Timbercycle">
+<meta property="og:title" content="Pallet Program Calculator | Timbercycle">
+<meta property="og:description" content="Work out how many timber pallets your sites generate in a year, the tonnage, how many could be reused, and how much becomes mulch instead of landfill.">
+<meta property="og:url" content="https://rdodeployme.github.io/timbercycle-site/pallet-calculator.html">
+<meta property="og:image" content="https://timbercycle.com.au/wp-content/uploads/2026/02/a6cee84a-126c-43d1-ab64-c490ad243dfa.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="https://timbercycle.com.au/wp-content/uploads/2026/02/Timber-Cycle-04.png">
+<script type="application/ld+json">{
+ "@context":"https://schema.org",
+ "@type":"LocalBusiness",
+ "@id":"https://rdodeployme.github.io/timbercycle-site/#org",
+ "name":"Timbercycle",
+ "description":"Timber pallet recovery, reuse and recycling at scale. A Recycle Group company.",
+ "url":"https://rdodeployme.github.io/timbercycle-site/",
+ "logo":"https://timbercycle.com.au/wp-content/uploads/2026/02/Timber-Cycle-04.png",
+ "image":"https://timbercycle.com.au/wp-content/uploads/2026/02/a6cee84a-126c-43d1-ab64-c490ad243dfa.jpg",
+ "telephone":"+61433225511",
+ "email":"info@timbercycle.com.au",
+ "address":{"@type":"PostalAddress","streetAddress":"116 Furner Avenue","addressLocality":"North Geelong","addressRegion":"VIC","addressCountry":"AU"},
+ "areaServed":{"@type":"State","name":"Victoria"},
+ "parentOrganization":{"@type":"Organization","name":"Recycle Group"}
+}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-head">
+  <div class="head-in">
+    <a class="brand" href="index.html" aria-label="Timbercycle home"><img src="https://timbercycle.com.au/wp-content/uploads/2026/02/Timber-Cycle-04.png" alt="Timbercycle" width="186" height="30"></a>
+    <button class="burger" aria-label="Menu" aria-expanded="false">&#9776;</button>
+    <nav class="nav" aria-label="Main">
+      <a href="pallet-recovery.html">Pallet Reuse</a>
+      <a href="timber-recycling.html">Timber Recycling</a>
+      <a href="bulk-pallet-programs.html">Bulk Programs</a>
+      <a href="pallet-calculator.html" aria-current="page">Calculator</a>
+      <a href="products.html">Products</a>
+      <a href="about.html">About</a>
+      <a class="nav-cta" href="contact.html">Get a Quote</a>
+    </nav>
+  </div>
+</header>
+<main id="main">
+
+<section class="hero hero--page">
+  <div class="hero__in">
+    <span class="eyebrow">Pallet program calculator</span>
+    <h1>What are your pallets<br>actually <span class="tan">worth</span>?</h1>
+    <p class="lead">Three numbers and you'll know what leaves your gate in a year &mdash; the tonnage, how much could go back into service, and how much becomes mulch instead of landfill.</p>
+  </div>
+</section>
+
+<section class="section" id="calc">
+  <div class="wrap">
+    <div class="calc">
+
+      <div class="calc__panel">
+        <span class="eyebrow">Your site</span>
+        <div class="ctrl">
+          <label for="ppw">Pallets per week, per site <span class="val" id="v-ppw">400</span></label>
+          <input id="ppw" type="range" min="10" max="5000" step="10" value="400">
+          <input id="ppw-n" type="number" min="1" max="20000" step="1" value="400" style="margin-top:12px" aria-label="Pallets per week, exact figure">
+          <span class="hint">Drag the slider or type an exact figure.</span>
+        </div>
+        <div class="ctrl">
+          <label for="sites">Number of sites <span class="val" id="v-sites">1</span></label>
+          <input id="sites" type="range" min="1" max="25" step="1" value="1">
+        </div>
+        <div class="ctrl">
+          <label for="pct">Share still in reusable condition <span class="val" id="v-pct">45%</span></label>
+          <input id="pct" type="range" min="0" max="100" step="5" value="45">
+          <span class="hint">If you don't know, leave it. We'll grade a sample load and tell you the real figure.</span>
+        </div>
+
+        <details class="assump">
+          <summary>Assumptions you can change</summary>
+          <div class="ctrl">
+            <label for="kg">Average pallet weight (kg)</label>
+            <input id="kg" type="number" min="5" max="80" step="1" value="25">
+            <span class="hint">A standard Australian hardwood pallet sits around this mark. Heavier export and custom pallets push it up.</span>
+          </div>
+          <div class="ctrl">
+            <label for="tpl">Tonnes per semi-trailer load</label>
+            <input id="tpl" type="number" min="5" max="40" step="1" value="20">
+          </div>
+          <div class="ctrl">
+            <label for="dens">Mulch bulk density (kg per m&sup3;)</label>
+            <input id="dens" type="number" min="120" max="500" step="10" value="250">
+          </div>
+        </details>
+      </div>
+
+      <div>
+        <div class="kpis" style="margin-top:0">
+          <div class="metric metric--hero">
+            <span class="metric__n" id="o-pallets">20,800</span>
+            <span class="metric__l">pallets leaving your sites every year</span>
+          </div>
+          <div class="metric"><span class="metric__n" id="o-tonnes">520</span><span class="metric__l">tonnes of timber a year</span></div>
+          <div class="metric"><span class="metric__n" id="o-reuse">9,360</span><span class="metric__l">pallets that could go back into service</span></div>
+          <div class="metric"><span class="metric__n" id="o-shred">286</span><span class="metric__l">tonnes into mulch, fibre and feedstock</span></div>
+          <div class="metric"><span class="metric__n" id="o-loads">26</span><span class="metric__l">semi-trailer loads a year</span></div>
+        </div>
+
+        <div class="split-bar">
+          <div class="split-bar__track">
+            <div class="split-bar__seg seg-reuse" id="seg-reuse" style="width:45%">45% reused</div>
+            <div class="split-bar__seg seg-shred" id="seg-shred" style="width:55%">55% recycled</div>
+          </div>
+          <div class="split-bar__key">
+            <span><i style="background:var(--timber)"></i> Repaired and returned to the supply chain</span>
+            <span><i style="background:var(--ink-3)"></i> Shredded into mulch, fibre and feedstock</span>
+          </div>
+        </div>
+
+        <div class="scale-note">
+          <span class="eyebrow">Put that in the real world</span>
+          <strong><span id="o-scale">2.1 football ovals</span></strong>
+          <p><span id="o-scale-tail">covered in mulch, 75 mm deep, every year.</span> That is the material currently going into a bin.</p>
+        </div>
+
+        <div class="note">
+          This estimates <strong>volume, not price</strong>. What a program costs &mdash; or returns &mdash; depends on your pallet mix, your locations and how full each collection runs. We model that after a site assessment, not before.
+        </div>
+
+        <h2 style="margin-top:56px">Send us these numbers</h2>
+        <p class="lead" style="margin-top:14px">We'll come back with a collection schedule and the commercials behind it. Your email client will open with the figures already filled in.</p>
+        <form id="calc-form" style="margin-top:26px">
+          <div class="split" style="gap:20px">
+            <div class="field"><label for="c-name">Name</label><input id="c-name" name="name" type="text" required></div>
+            <div class="field"><label for="c-co">Company</label><input id="c-co" name="company" type="text" required></div>
+          </div>
+          <div class="split" style="gap:20px">
+            <div class="field"><label for="c-email">Email</label><input id="c-email" name="email" type="email" required></div>
+            <div class="field"><label for="c-phone">Phone</label><input id="c-phone" name="phone" type="tel"></div>
+          </div>
+          <div class="field"><label for="c-loc">Site locations</label><input id="c-loc" name="locations" type="text" placeholder="Suburb or suburbs"></div>
+          <div class="field"><label for="c-notes">Anything else</label><textarea id="c-notes" name="notes" style="min-height:100px"></textarea></div>
+          <div class="btn-row" style="margin-top:8px">
+            <button class="btn btn--dark" type="submit">Send my numbers</button>
+            <button class="btn btn--outline" type="button" id="calc-copy">Copy the numbers</button>
+          </div>
+          <div class="form-msg">Your email client should have opened with the figures filled in. If it didn't, hit <strong>Copy the numbers</strong> and send them to info@timbercycle.com.au.</div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+<section class="cta">
+  <div class="wrap">
+    <div class="cta__in">
+      <div><h2>Rather just talk it through?</h2><p>Call us with a rough weekly figure and we'll do the maths on the phone.</p></div>
+      <div class="btn-row"><a class="btn btn--primary" href="tel:134455">Call 13 44 55</a></div>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <span class="brand-foot"><img src="https://timbercycle.com.au/wp-content/uploads/2026/02/Timber-Cycle-04.png" alt="Timbercycle" width="170" height="27"></span>
+        <p class="foot-note">Timber pallet recovery, reuse and recycling at scale. A Recycle Group company, based in North Geelong, Victoria.</p>
+      </div>
+      <div>
+        <h4>What we do</h4>
+        <ul>
+          <li><a href="pallet-recovery.html">Pallet recovery &amp; reuse</a></li>
+          <li><a href="timber-recycling.html">Timber recycling &amp; mulch</a></li>
+          <li><a href="bulk-pallet-programs.html">Bulk pallet programs</a></li>
+          <li><a href="pallet-calculator.html">Pallet calculator</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="faq.html">Questions</a></li>
+          <li><a href="capability-statement.html">Capability statement</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Where we collect</h4>
+        <ul>
+          <li><a href="pallet-collection-melbourne.html">Melbourne</a></li>
+          <li><a href="pallet-collection-geelong.html">Geelong</a></li>
+          <li><a href="pallet-collection-laverton-altona.html">Laverton &amp; Altona</a></li>
+          <li><a href="pallet-collection-truganina-derrimut.html">Truganina &amp; Derrimut</a></li>
+          <li><a href="pallet-collection-dandenong.html">Dandenong</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Get in touch</h4>
+        <ul>
+          <li><a href="tel:134455">13 44 55</a></li>
+          <li><a href="tel:0433225511">0433 225 511</a></li>
+          <li><a href="mailto:info@timbercycle.com.au">info@timbercycle.com.au</a></li>
+          <li>116 Furner Avenue<br>North Geelong VIC</li>
+          <li><a href="about.html">About Timbercycle</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bar">
+      <span>&copy; 2026 Timbercycle. A Recycle Group company.</span>
+      <span>Timber only. Victoria.</span>
+    </div>
+  </div>
+</footer>
+<div class="mobile-cta">
+  <a href="tel:134455">Call 13 44 55</a>
+  <a class="primary" href="contact.html">Get a Quote</a>
+</div>
+<script src="site.js"></script>
+</body>
+</html>

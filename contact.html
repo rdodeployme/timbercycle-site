@@ -5,24 +5,46 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Contact Timbercycle | Get a quote</title>
 <meta name="description" content="Contact Timbercycle for timber pallet collection, bulk pallet programs, on-site processing, or to buy reconditioned pallets, mulch and feedstock. North Geelong, Victoria.">
+<link rel="canonical" href="https://rdodeployme.github.io/timbercycle-site/contact.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Timbercycle">
+<meta property="og:title" content="Contact Timbercycle | Get a quote">
+<meta property="og:description" content="Contact Timbercycle for timber pallet collection, bulk pallet programs, on-site processing, or to buy reconditioned pallets, mulch and feedstock. North Geelong, Victoria.">
+<meta property="og:url" content="https://rdodeployme.github.io/timbercycle-site/contact.html">
+<meta property="og:image" content="https://timbercycle.com.au/wp-content/uploads/2026/02/a6cee84a-126c-43d1-ab64-c490ad243dfa.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <link rel="icon" href="https://timbercycle.com.au/wp-content/uploads/2026/02/Timber-Cycle-04.png">
+<script type="application/ld+json">{
+ "@context":"https://schema.org",
+ "@type":"LocalBusiness",
+ "@id":"https://rdodeployme.github.io/timbercycle-site/#org",
+ "name":"Timbercycle",
+ "description":"Timber pallet recovery, reuse and recycling at scale. A Recycle Group company.",
+ "url":"https://rdodeployme.github.io/timbercycle-site/",
+ "logo":"https://timbercycle.com.au/wp-content/uploads/2026/02/Timber-Cycle-04.png",
+ "image":"https://timbercycle.com.au/wp-content/uploads/2026/02/a6cee84a-126c-43d1-ab64-c490ad243dfa.jpg",
+ "telephone":"+61433225511",
+ "email":"info@timbercycle.com.au",
+ "address":{"@type":"PostalAddress","streetAddress":"116 Furner Avenue","addressLocality":"North Geelong","addressRegion":"VIC","addressCountry":"AU"},
+ "areaServed":{"@type":"State","name":"Victoria"},
+ "parentOrganization":{"@type":"Organization","name":"Recycle Group"}
+}</script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
 <header class="site-head">
   <div class="head-in">
-    <a class="brand" href="index.html" aria-label="Timbercycle home">
-      <img src="https://timbercycle.com.au/wp-content/uploads/2026/02/Timber-Cycle-04.png" alt="Timbercycle">
-    </a>
+    <a class="brand" href="index.html" aria-label="Timbercycle home"><img src="https://timbercycle.com.au/wp-content/uploads/2026/02/Timber-Cycle-04.png" alt="Timbercycle" width="186" height="30"></a>
     <button class="burger" aria-label="Menu" aria-expanded="false">&#9776;</button>
-    <nav class="nav">
+    <nav class="nav" aria-label="Main">
       <a href="pallet-recovery.html">Pallet Reuse</a>
       <a href="timber-recycling.html">Timber Recycling</a>
       <a href="bulk-pallet-programs.html">Bulk Programs</a>
+      <a href="pallet-calculator.html">Calculator</a>
       <a href="products.html">Products</a>
       <a href="about.html">About</a>
       <a class="nav-cta" href="contact.html">Get a Quote</a>
@@ -49,26 +71,16 @@
         <div class="detail"><span>Direct</span><a href="tel:0433225511">0433 225 511</a></div>
         <div class="detail"><span>Email</span><a href="mailto:info@timbercycle.com.au">info@timbercycle.com.au</a></div>
         <div class="detail"><span>Site</span><strong>116 Furner Avenue<br>North Geelong VIC</strong></div>
+        <div class="note" style="margin-top:34px">Not sure of your volumes? The <a href="pallet-calculator.html"><strong>pallet calculator</strong></a> turns a weekly figure into an annual one in about two minutes, and sends the numbers through with your enquiry.</div>
       </div>
       <div>
         <h2>Send us the details</h2>
-        <form data-preview novalidate>
-          <div class="field">
-            <label for="name">Name</label>
-            <input id="name" name="name" type="text" required>
-          </div>
-          <div class="field">
-            <label for="company">Company</label>
-            <input id="company" name="company" type="text">
-          </div>
-          <div class="field">
-            <label for="email">Email</label>
-            <input id="email" name="email" type="email" required>
-          </div>
-          <div class="field">
-            <label for="phone">Phone</label>
-            <input id="phone" name="phone" type="tel">
-          </div>
+        <form data-mailto data-subject="Timbercycle enquiry" novalidate>
+          <div class="field"><label for="name">Name</label><input id="name" name="name" type="text" required></div>
+          <div class="field"><label for="company">Company</label><input id="company" name="company" type="text"></div>
+          <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" required></div>
+          <div class="field"><label for="phone">Phone</label><input id="phone" name="phone" type="tel"></div>
+          <div class="field"><label for="location">Site location</label><input id="location" name="location" type="text" placeholder="Suburb"></div>
           <div class="field">
             <label for="type">What's this about?</label>
             <select id="type" name="type">
@@ -81,12 +93,9 @@
               <option>Something else</option>
             </select>
           </div>
-          <div class="field">
-            <label for="message">Volumes, location and anything else we should know</label>
-            <textarea id="message" name="message" required></textarea>
-          </div>
+          <div class="field"><label for="message">Volumes and anything else we should know</label><textarea id="message" name="message" required></textarea></div>
           <button class="btn btn--dark" type="submit">Send enquiry</button>
-          <div class="form-msg">This is a preview build, so the form isn't connected to an inbox yet. On the live site this sends straight through to the Timbercycle team.</div>
+          <div class="form-msg">Your email client should have opened with the details filled in. If nothing happened, email us directly at <strong>info@timbercycle.com.au</strong>.</div>
           <p class="form-note">We don't accept asbestos or hazardous waste.</p>
         </form>
       </div>
@@ -111,7 +120,7 @@
   <div class="wrap">
     <div class="foot-grid">
       <div>
-        <img src="https://timbercycle.com.au/wp-content/uploads/2026/02/Timber-Cycle-04.png" alt="Timbercycle">
+        <span class="brand-foot"><img src="https://timbercycle.com.au/wp-content/uploads/2026/02/Timber-Cycle-04.png" alt="Timbercycle" width="170" height="27"></span>
         <p class="foot-note">Timber pallet recovery, reuse and recycling at scale. A Recycle Group company, based in North Geelong, Victoria.</p>
       </div>
       <div>
@@ -120,8 +129,20 @@
           <li><a href="pallet-recovery.html">Pallet recovery &amp; reuse</a></li>
           <li><a href="timber-recycling.html">Timber recycling &amp; mulch</a></li>
           <li><a href="bulk-pallet-programs.html">Bulk pallet programs</a></li>
+          <li><a href="pallet-calculator.html">Pallet calculator</a></li>
           <li><a href="products.html">Products</a></li>
-          <li><a href="about.html">About Timbercycle</a></li>
+          <li><a href="faq.html">Questions</a></li>
+          <li><a href="capability-statement.html">Capability statement</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Where we collect</h4>
+        <ul>
+          <li><a href="pallet-collection-melbourne.html">Melbourne</a></li>
+          <li><a href="pallet-collection-geelong.html">Geelong</a></li>
+          <li><a href="pallet-collection-laverton-altona.html">Laverton &amp; Altona</a></li>
+          <li><a href="pallet-collection-truganina-derrimut.html">Truganina &amp; Derrimut</a></li>
+          <li><a href="pallet-collection-dandenong.html">Dandenong</a></li>
         </ul>
       </div>
       <div>
@@ -131,7 +152,7 @@
           <li><a href="tel:0433225511">0433 225 511</a></li>
           <li><a href="mailto:info@timbercycle.com.au">info@timbercycle.com.au</a></li>
           <li>116 Furner Avenue<br>North Geelong VIC</li>
-          <li><a href="contact.html">Get a quote</a></li>
+          <li><a href="about.html">About Timbercycle</a></li>
         </ul>
       </div>
     </div>
@@ -141,6 +162,10 @@
     </div>
   </div>
 </footer>
+<div class="mobile-cta">
+  <a href="tel:134455">Call 13 44 55</a>
+  <a class="primary" href="contact.html">Get a Quote</a>
+</div>
 <script src="site.js"></script>
 </body>
 </html>

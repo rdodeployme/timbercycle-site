@@ -1,0 +1,7 @@
+# Preview build of the Timbercycle rebuild.
+# Search engines are blocked so this does not compete with timbercycle.com.au.
+# To go live: delete the Disallow line below.
+User-agent: *
+Disallow: /
+
+Sitemap: https://rdodeployme.github.io/timbercycle-site/sitemap.xml
