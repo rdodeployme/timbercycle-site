@@ -163,60 +163,80 @@
 <section class="section dark">
   <div class="wrap">
     <span class="eyebrow">Two streams</span>
-    <h2>What happens to every pallet.</h2>
+    <h2>What a load from your sector grades out as.</h2>
     
-<div class="flow-wrap">
-  <span class="eyebrow">How it runs</span>
-  <svg class="flow" viewBox="0 0 1040 300" role="img" aria-label="Pallets are collected, graded, then either repaired and returned to service or shredded into mulch, fibre and feedstock">
-    <defs>
-      <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#E9B57C"/></marker>
-      <marker id="ah2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#8E877E"/></marker>
-    </defs>
-    <!-- your site -->
-    <rect class="box" x="16" y="118" width="196" height="64" rx="8"/>
-    <rect class="plt" x="34" y="164" width="40" height="6" rx="1"/>
-    <rect class="plt" x="34" y="154" width="40" height="6" rx="1"/>
-    <rect class="plt" x="34" y="144" width="40" height="6" rx="1"/>
-    <rect class="plt" x="34" y="134" width="40" height="6" rx="1"/>
-    <text class="lbl" x="88" y="146">Your site</text>
-    <text class="sub" x="88" y="166">pallets stacking up</text>
-    <!-- collect -->
-    <path class="dash" d="M214 150 H240" marker-end="url(#ah)"/>
-    <rect class="box" x="244" y="118" width="150" height="64" rx="8"/>
-    <text class="lbl" x="319" y="146" text-anchor="middle">Collect</text>
-    <text class="sub" x="319" y="166" text-anchor="middle">scheduled, no sorting</text>
-    <!-- grade -->
-    <path class="dash" d="M396 150 H422" marker-end="url(#ah)"/>
-    <rect class="box" x="426" y="118" width="156" height="64" rx="8"/>
-    <text class="lbl" x="504" y="146" text-anchor="middle">Grade</text>
-    <text class="sub" x="504" y="166" text-anchor="middle">at our yard, not yours</text>
-    <!-- split up: repair -->
-    <path class="dash" d="M584 140 C624 140 624 60 644 60 H660" marker-end="url(#ah)"/>
-    <rect class="box" x="664" y="28" width="160" height="64" rx="8"/>
-    <text class="lbl" x="744" y="56" text-anchor="middle">Repair</text>
-    <text class="sub" x="744" y="76" text-anchor="middle">boards, bearers, fixings</text>
-    <path class="dash" d="M826 60 H852" marker-end="url(#ah)"/>
-    <rect class="box box--tan" x="856" y="28" width="170" height="64" rx="8"/>
-    <text class="lbl" x="941" y="56" text-anchor="middle" style="fill:#0B0B0B">Back to work</text>
-    <text class="sub" x="941" y="76" text-anchor="middle" style="fill:#4a3a22">reconditioned pallets</text>
-    <text class="num" x="612" y="42" text-anchor="middle">01</text>
-    <!-- split down: shred -->
-    <path class="dash dash--dark" d="M584 160 C624 160 624 240 644 240 H660" marker-end="url(#ah2)"/>
-    <rect class="box" x="664" y="208" width="160" height="64" rx="8"/>
-    <text class="lbl" x="744" y="236" text-anchor="middle">Shred</text>
-    <text class="sub" x="744" y="256" text-anchor="middle">anything past repair</text>
-    <path class="dash dash--dark" d="M826 240 H852" marker-end="url(#ah2)"/>
-    <rect class="box" x="856" y="208" width="170" height="64" rx="8"/>
-    <text class="lbl" x="941" y="232" text-anchor="middle">Mulch, fibre,</text>
-    <text class="lbl" x="941" y="252" text-anchor="middle">feedstock</text>
-    <text class="num" x="612" y="290" text-anchor="middle" style="fill:#8E877E">02</text>
+<div class="stack-wrap">
+  <span class="eyebrow">A typical load, graded</span>
+  <svg class="stack" viewBox="0 0 1040 316" role="img" aria-label="Illustrative: about 45% of a load grades as reusable, the rest is shredded">
+    <rect class="deck" x="60" y="22" width="300" height="9" rx="1.5"/>
+    <rect class="bear" x="66" y="32" width="18" height="6" rx="1"/>
+    <rect class="bear" x="200" y="32" width="18" height="6" rx="1"/>
+    <rect class="bear" x="336" y="32" width="18" height="6" rx="1"/>
+    <rect class="deck" x="60" y="41" width="300" height="9" rx="1.5"/>
+    <rect class="bear" x="66" y="51" width="18" height="6" rx="1"/>
+    <rect class="bear" x="200" y="51" width="18" height="6" rx="1"/>
+    <rect class="bear" x="336" y="51" width="18" height="6" rx="1"/>
+    <rect class="deck" x="60" y="60" width="300" height="9" rx="1.5"/>
+    <rect class="bear" x="66" y="70" width="18" height="6" rx="1"/>
+    <rect class="bear" x="200" y="70" width="18" height="6" rx="1"/>
+    <rect class="bear" x="336" y="70" width="18" height="6" rx="1"/>
+    <rect class="deck" x="60" y="79" width="300" height="9" rx="1.5"/>
+    <rect class="bear" x="66" y="89" width="18" height="6" rx="1"/>
+    <rect class="bear" x="200" y="89" width="18" height="6" rx="1"/>
+    <rect class="bear" x="336" y="89" width="18" height="6" rx="1"/>
+    <rect class="deck" x="60" y="98" width="300" height="9" rx="1.5"/>
+    <rect class="bear" x="66" y="108" width="18" height="6" rx="1"/>
+    <rect class="bear" x="200" y="108" width="18" height="6" rx="1"/>
+    <rect class="bear" x="336" y="108" width="18" height="6" rx="1"/>
+    <rect class="deck" x="60" y="117" width="300" height="9" rx="1.5"/>
+    <rect class="bear" x="66" y="127" width="18" height="6" rx="1"/>
+    <rect class="bear" x="200" y="127" width="18" height="6" rx="1"/>
+    <rect class="bear" x="336" y="127" width="18" height="6" rx="1"/>
+    <rect class="deck--c" x="60" y="136" width="300" height="9" rx="1.5"/>
+    <rect class="bear--c" x="66" y="146" width="18" height="6" rx="1"/>
+    <rect class="bear--c" x="200" y="146" width="18" height="6" rx="1"/>
+    <rect class="bear--c" x="336" y="146" width="18" height="6" rx="1"/>
+    <rect class="deck--c" x="60" y="155" width="300" height="9" rx="1.5"/>
+    <rect class="bear--c" x="66" y="165" width="18" height="6" rx="1"/>
+    <rect class="bear--c" x="200" y="165" width="18" height="6" rx="1"/>
+    <rect class="bear--c" x="336" y="165" width="18" height="6" rx="1"/>
+    <rect class="deck--c" x="60" y="174" width="300" height="9" rx="1.5"/>
+    <rect class="bear--c" x="66" y="184" width="18" height="6" rx="1"/>
+    <rect class="bear--c" x="200" y="184" width="18" height="6" rx="1"/>
+    <rect class="bear--c" x="336" y="184" width="18" height="6" rx="1"/>
+    <rect class="deck--c" x="60" y="193" width="300" height="9" rx="1.5"/>
+    <rect class="bear--c" x="66" y="203" width="18" height="6" rx="1"/>
+    <rect class="bear--c" x="200" y="203" width="18" height="6" rx="1"/>
+    <rect class="bear--c" x="336" y="203" width="18" height="6" rx="1"/>
+    <rect class="deck--c" x="60" y="212" width="300" height="9" rx="1.5"/>
+    <rect class="bear--c" x="66" y="222" width="18" height="6" rx="1"/>
+    <rect class="bear--c" x="200" y="222" width="18" height="6" rx="1"/>
+    <rect class="bear--c" x="336" y="222" width="18" height="6" rx="1"/>
+    <rect class="deck--c" x="60" y="231" width="300" height="9" rx="1.5"/>
+    <rect class="bear--c" x="66" y="241" width="18" height="6" rx="1"/>
+    <rect class="bear--c" x="200" y="241" width="18" height="6" rx="1"/>
+    <rect class="bear--c" x="336" y="241" width="18" height="6" rx="1"/>
+    <rect class="deck--c" x="60" y="250" width="300" height="9" rx="1.5"/>
+    <rect class="bear--c" x="66" y="260" width="18" height="6" rx="1"/>
+    <rect class="bear--c" x="200" y="260" width="18" height="6" rx="1"/>
+    <rect class="bear--c" x="336" y="260" width="18" height="6" rx="1"/>
+    <rect class="deck--c" x="60" y="269" width="300" height="9" rx="1.5"/>
+    <rect class="bear--c" x="66" y="279" width="18" height="6" rx="1"/>
+    <rect class="bear--c" x="200" y="279" width="18" height="6" rx="1"/>
+    <rect class="bear--c" x="336" y="279" width="18" height="6" rx="1"/>
+    <path class="brk" d="M380 22 H400 V132 H380"/>
+    <path class="brk brk--c" d="M380 136 H400 V284 H380"/>
+    <text class="big" x="440" y="83">45%</text>
+    <text class="lbl" x="440" y="107">back into service</text>
+    <text class="sub" x="440" y="127">graded A or B, repaired where needed</text>
+    <text class="big big--c" x="440" y="216">55%</text>
+    <text class="lbl" x="440" y="240">to mulch, fibre and feedstock</text>
+    <text class="sub" x="440" y="260">graded C, shredded, never landfill</text>
+    <text class="sub" x="60" y="308">Illustrative. Your real split comes from grading a sample load.</text>
   </svg>
-  <div class="flow-mobile">
-    <div>Your site<span>Pallets stacking up</span></div>
-    <div>Collect<span>Scheduled, no sorting at your end</span></div>
-    <div>Grade<span>At our yard, not yours</span></div>
-    <div class="tan">01 &middot; Repair &rarr; back to work<span>Reconditioned pallets into the supply chain</span></div>
-    <div>02 &middot; Shred &rarr; mulch, fibre, feedstock<span>Anything past repair, never landfill</span></div>
+  <div class="stack-mobile">
+    <div class="a"><b>45%</b><span>back into service</span></div>
+    <div class="c"><b>55%</b><span>to mulch, fibre and feedstock</span></div>
   </div>
 </div>
 
