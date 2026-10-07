@@ -220,7 +220,9 @@
     var out = document.getElementById('mini-out'), go = document.getElementById('mini-go');
     var upd = function () {
       var v = parseFloat(mi.value) || 0;
+      v = Math.max(0, Math.min(v, 20000));
       out.textContent = fmt(v * 52);
+      out.classList.toggle('is-long', out.textContent.length > 7);
       go.href = 'pallet-calculator.html?ppw=' + Math.round(v);
     };
     mi.addEventListener('input', upd); upd();
