@@ -74,6 +74,7 @@
     var ovals = area / 18000;                   // ~MCG-sized playing surface
 
     el('o-pallets').textContent = n0(perYear);
+    if (el('pl-pallets')) { el('pl-pallets').textContent = n0(perYear); el('pl-tonnes').textContent = n0(tonnes); }
     el('o-tonnes').textContent = n0(tonnes);
     el('o-reuse').textContent = n0(reuse);
     el('o-shred').textContent = n0(shredT);
@@ -104,6 +105,14 @@
       loads: loads, ppw: ppw, pct: pct, sites: sites, kg: kg
     };
   }
+
+  /* opening "Assumptions" inside the capped sticky panel: bring the fields into view */
+  var asm = document.querySelector('.calc__panel .assump');
+  if (asm) asm.addEventListener('toggle', function () {
+    if (!asm.open) return;
+    var panel = asm.closest('.calc__panel');
+    if (panel.scrollHeight > panel.clientHeight + 4) panel.scrollTo({ top: asm.offsetTop - 16, behavior: 'smooth' });
+  });
 
   fields.forEach(function (id) {
     var f = el(id);

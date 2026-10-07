@@ -669,3 +669,17 @@ html.js .rv.in{opacity:1;transform:none}
   .yard-grid{grid-template-columns:1fr}
   .yard-anim{order:-1;max-width:620px;margin:-8px auto 8px;width:100%}
 }
+
+/* ---------- calculator panel: never taller than the screen while sticky ---------- */
+@media (min-width:921px){
+  .calc__panel{max-height:calc(100vh - 124px);overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin}
+}
+/* live readout inside the panel — phones/tablets only, so the result sits next to the sliders */
+.panel-live{display:none}
+@media (max-width:920px){
+  .panel-live{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:22px 0 4px}
+  .panel-live div{background:var(--ink);color:#fff;border-radius:8px;padding:14px 16px}
+  .panel-live b{display:block;font-family:"Poppins",sans-serif;font-weight:800;font-size:1.5rem;letter-spacing:-.03em;line-height:1;color:var(--timber)}
+  .panel-live span{display:block;font-size:.8rem;color:#B4AEA6;margin-top:5px}
+  .panel-live a{grid-column:1/-1;text-align:center;font-size:.85rem;font-weight:600;color:var(--ink);padding:6px 0 0}
+}
