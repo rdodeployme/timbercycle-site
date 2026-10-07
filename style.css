@@ -9,9 +9,9 @@
   --timber:#E2694C;      /* on dark  - 5.96:1 on #0B0B0B */
   --timber-2:#A93A26;    /* on light - 6.32:1 on white   */
   --timber-soft:#F8E0D8;
-  /* Pine: the colour of the material itself (logo, pallets, mulch) */
-  --wood:#E9B57C;
-  --wood-2:#C8894A;
+  /* Jarrah timber: the material itself (logo planks, pallets, mulch) */
+  --wood:#D45A3D;
+  --wood-2:#8E2D19;
   --paper:#FFFFFF;
   --wash:#F7F4EF;
   --text:#302E2B;
@@ -625,7 +625,7 @@ html.js .rv.in{opacity:1;transform:none}
 .stack-wrap{background:var(--ink);border-radius:12px;padding:clamp(20px,3vw,40px) clamp(12px,2vw,28px);margin-top:36px}
 .stack{width:100%;overflow:visible}
 .stack text{font-family:"Poppins",sans-serif;font-weight:600}
-.stack .deck{fill:#EDB77E}.stack .bear{fill:#C8894A}
+.stack .deck{fill:var(--wood)}.stack .bear{fill:var(--wood-2)}
 .stack .deck--c{fill:#2A2825}.stack .bear--c{fill:#1B1917;stroke:rgba(255,255,255,.12);stroke-width:1}
 .stack .big{font-size:56px;font-weight:800;letter-spacing:-.04em;fill:var(--timber)}
 .stack .big--c{fill:#8E877E}

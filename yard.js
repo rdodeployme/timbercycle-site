@@ -11,7 +11,7 @@
 
   var VW = 600, VH = 420;                    // virtual scene
   var C = {
-    tan: '#E9B57C', tanDeep: '#C8894A', grain: '#D9A061', acc: '#E2694C',
+    tan: '#D45A3D', tanDeep: '#8E2D19', grain: '#B7432A', acc: '#E2694C',
     grey: '#5B5650', greyDeep: '#3B3834',
     line: 'rgba(255,255,255,.16)', text: '#FFFFFF', sub: '#A9A39B', bg: '#0B0B0B'
   };
