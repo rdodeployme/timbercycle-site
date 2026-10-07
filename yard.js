@@ -11,7 +11,7 @@
 
   var VW = 600, VH = 420;                    // virtual scene
   var C = {
-    tan: '#E9B57C', tanDeep: '#C8894A', grain: '#D9A061',
+    tan: '#E9B57C', tanDeep: '#C8894A', grain: '#D9A061', acc: '#E2694C',
     grey: '#5B5650', greyDeep: '#3B3834',
     line: 'rgba(255,255,255,.16)', text: '#FFFFFF', sub: '#A9A39B', bg: '#0B0B0B'
   };
@@ -121,17 +121,17 @@
     label('YOUR SITE', 6, BELT_Y + 42, C.sub, 12, 600);
 
     // ---- grading gate
-    ctx.strokeStyle = C.tan; ctx.lineWidth = 3;
+    ctx.strokeStyle = C.acc; ctx.lineWidth = 3;
     ctx.beginPath(); ctx.moveTo(GATE_X, BELT_Y - 2); ctx.lineTo(GATE_X, BELT_Y - 64); ctx.lineTo(GATE_X + 16, BELT_Y - 64); ctx.lineTo(GATE_X + 16, BELT_Y - 2); ctx.stroke();
-    ctx.fillStyle = 'rgba(233,181,124,.12)'; ctx.fillRect(GATE_X, BELT_Y - 64, 16, 62);
-    label('GRADE', GATE_X + 8, BELT_Y - 76, C.tan, 13, 700, 'center');
+    ctx.fillStyle = 'rgba(226,105,76,.14)'; ctx.fillRect(GATE_X, BELT_Y - 64, 16, 62);
+    label('GRADE', GATE_X + 8, BELT_Y - 76, C.acc, 13, 700, 'center');
 
     // ---- stack platform + label
     var shipX = ship > 0 ? ease(ship) * 170 : 0, shipA = ship > 0 ? 1 - ship : 1;
     ctx.strokeStyle = C.line; ctx.lineWidth = 2;
     ctx.beginPath(); ctx.moveTo(STACK.x - 22, STACK.base + 1); ctx.lineTo(STACK.x + 128, STACK.base + 1); ctx.stroke();
     for (var s = 0; s < stackN; s++) pallet(STACK.x + shipX, STACK.base - 18 - s * 17, 0, shipA);
-    label('01', STACK.x - 24, 46, C.tan, 36, 800);
+    label('01', STACK.x - 24, 46, C.acc, 36, 800);
     label('BACK TO WORK', STACK.x + 24, 32, C.text, 14, 700);
     label('reconditioned pallets', STACK.x + 24, 50, C.sub, 12, 500);
 
