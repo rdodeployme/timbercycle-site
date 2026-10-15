@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pallet Program Builder | Timbercycle | Recycle Group</title>
+<meta name="description" content="Draft a one-page timber pallet program summary from your site profile: annual volumes, reuse and recycling split, collection rhythm and next steps. Print it or send it to Timbercycle.">
+<meta property="og:title" content="Pallet Program Builder | Timbercycle | Recycle Group"><meta property="og:description" content="Draft a one-page timber pallet program summary from your site profile: annual volumes, reuse and recycling split, collection rhythm and next steps. Print it or send it to Timbercycle."><meta property="og:type" content="website">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=IBM+Plex+Mono:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/main.css">
+<link rel="stylesheet" href="assets/timbercycle.css">
+<link rel="stylesheet" href="assets/tc-rg.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='101.8 13.97 72 72'%3E%3Crect x='101.8' y='13.97' width='72' height='72' rx='10' fill='%230E1114'/%3E%3Cg transform='translate(137.8 49.97) scale(1.12) translate(-137.8 -49.97)'%3E%3Cpath fill='%23C2804F' d='M116 73V26.93H142.76Q147.85 26.93 151.27 28.84Q154.69 30.76 156.4 34.07Q158.11 37.39 158.11 41.48Q158.11 45.91 156.07 49.36Q154.02 52.82 150.33 54.76L159.59 73H146.17L138.53 56.77H128V73ZM128 47.85H140.41Q142.89 47.85 144.4 46.21Q145.91 44.57 145.91 41.82Q145.91 40.01 145.24 38.73Q144.57 37.46 143.36 36.76Q142.15 36.05 140.41 36.05H128Z'/%3E%3C/g%3E%3C/svg%3E">
+
+</head>
+<body class="tc-page">
+<nav class="top"><div class="wrap">
+  <a href="https://recycle.net.au/" class="logo" aria-label="Recycle home"><img class="logo-img" src="assets/recycle-logo.svg" alt="Recycle Group" width="519" height="82"></a>
+  <div class="nav-links" id="navLinks"><a href="https://recycle.net.au/solutions/">Solutions</a><a href="https://recycle.net.au/who-we-work-with/">Sectors</a><a href="https://recycle.net.au/case-studies/">Case studies</a><a href="https://recycle.net.au/materials/">Materials</a><a href="https://recycle.net.au/infrastructure/">Infrastructure</a><a href="https://recycle.net.au/reporting/">Reporting</a><a href="https://recycle.net.au/the-group/" aria-current="page">Our businesses</a><a href="https://recycle.net.au/trace/">Trace a load</a></div>
+  <div class="nav-right"><a href="contact.html" class="btn btn-solid nav-cta">Let's work together</a>
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navLinks"><span></span></button></div>
+</div></nav>
+<div class="tc-bar"><div class="wrap">
+  <a class="tc-bar-brand" href="index.html"><b>Timbercycle</b><span>A Recycle Group business</span></a>
+  <div class="tc-bar-links"><a href="index.html">Overview</a><a href="pallet-recovery.html">Pallet recovery</a><a href="timber-recycling.html">Timber &amp; mulch</a><a href="bulk-pallet-programs.html">Bulk programs</a><a href="products.html">Products</a><a href="pallet-calculator.html">Calculator</a><a href="program-builder.html" aria-current="page">Program builder</a><a href="about.html">About</a><a href="faq.html">Questions</a><a href="for-ports-and-shipping.html">Industries</a><a href="pallet-collection-melbourne.html">Where we collect</a></div>
+  <a class="tc-bar-cta" href="contact.html">Get a quote</a>
+</div></div>
+<main class="tc" id="main">
+
+<section class="t-hero hero--page hero--compact">
+<div class="hero__in"><div class="tc-crumb"><a href="https://recycle.net.au/">Recycle Group</a><span>/</span><a href="https://recycle.net.au/the-group/">Our businesses</a><span>/</span><a href="index.html">Timbercycle</a><span>/</span><span>Pallet Program Builder</span></div>
+<div class="hero__grid">
+<div>
+<span class="t-eyebrow">Program builder</span>
+<h1>Your pallet program, on <span class="tan">one page</span>.</h1>
+<p class="t-lead">Put in your site profile and this drafts the program summary — volumes, streams, collection rhythm and what happens next. Print it, save it as a PDF, or send it straight through to us.</p>
+</div>
+<div class="hero-tiles">
+<div class="hero-tile"><b>↓</b><span>Annual volumes<small>Pallets, tonnes, reuse, mulch</small></span></div>
+<div class="hero-tile"><b>↻</b><span>Collection rhythm<small>Sized to your weekly flow</small></span></div>
+<div class="hero-tile"><b>⎙</b><span>Print or send<small>PDF for the ops manager, email to us</small></span></div>
+</div>
+</div>
+</div>
+</section>
+<section class="section">
+<div class="t-wrap">
+<div class="builder">
+<div>
+<div class="calc__panel">
+<span class="t-eyebrow">Site profile</span>
+<div class="ctrl"><label for="b-co">Company</label><input id="b-co" placeholder="Your company" type="text"/></div>
+<div class="ctrl"><label for="b-loc">Site location(s)</label><input id="b-loc" placeholder="Suburb, or several" type="text"/></div>
+<div class="ctrl">
+<label for="b-ppw">Pallets per week, per site <span class="t-val" id="v-b-ppw">400</span></label>
+<input id="b-ppw" max="5000" min="10" step="10" type="range" value="400"/>
+</div>
+<div class="ctrl">
+<label for="b-sites">Number of sites <span class="t-val" id="v-b-sites">1</span></label>
+<input id="b-sites" max="25" min="1" step="1" type="range" value="1"/>
+</div>
+<div class="ctrl">
+<label for="b-pct">Reusable share <span class="t-val" id="v-b-pct">45%</span></label>
+<input id="b-pct" max="100" min="0" step="5" type="range" value="45"/>
+<span class="hint">Leave it if you're not sure. We'll grade a sample load and correct it.</span>
+</div>
+<div class="assump" style="border-top:1px solid var(--line)">
+<span class="t-eyebrow" style="margin-top:4px">Send it through</span>
+<div class="ctrl"><label for="b-name">Your name</label><input id="b-name" type="text"/></div>
+<div class="ctrl"><label for="b-email">Email</label><input id="b-email" type="email"/></div>
+<div class="ctrl"><label for="b-phone">Phone</label><input id="b-phone" type="tel"/></div>
+<div class="btn-row" style="margin-top:20px">
+<button class="t-btn btn--dark" id="b-send" type="button">Send to Timbercycle</button>
+<button class="t-btn btn--outline" id="b-print" type="button">Print / save PDF</button>
+</div>
+<div class="form-msg" id="b-msg">Your email client should have opened with the summary filled in. If not, print it and send it to info@timbercycle.com.au.</div>
+</div>
+</div>
+</div>
+<div class="sheet" id="sheet">
+<div class="sheet__head">
+<div>
+<span class="t-eyebrow" style="margin-bottom:8px">Pallet program summary</span>
+<h2 id="s-co">Your company</h2>
+</div>
+<div class="meta">Prepared <span id="s-date"></span><br/>Sites: <span id="s-loc">Victoria</span><br/>Timbercycle · A Recycle Group company</div>
+</div>
+<div class="sheet__body">
+<section>
+<h3>Site profile</h3>
+<div class="grid">
+<div><b id="s-ppw">400</b><span>pallets a week, per site</span></div>
+<div><b id="s-sites">1</b><span>sites</span></div>
+<div><b id="s-pct">45%</b><span>estimated reusable share</span></div>
+</div>
+</section>
+<section>
+<h3>Estimated annual volumes</h3>
+<div class="grid">
+<div><b id="s-year">20,800</b><span>pallets</span></div>
+<div><b id="s-tonnes">520</b><span>tonnes of timber</span></div>
+<div><b id="s-reuse">9,360</b><span>back into service</span></div>
+<div><b id="s-shred">286</b><span>tonnes to mulch and fibre</span></div>
+</div>
+</section>
+<section>
+<h3>Proposed operation</h3>
+<ul>
+<li><strong>Collection:</strong> <span id="s-freq">Weekly collection</span>, adjusted after the first month against actual volumes.</li>
+<li><strong>Equipment:</strong> <span id="s-kit">Pallet cages or a trailer per site</span>.</li>
+<li><strong>Your side:</strong> stack pallets where you already stack them. No sorting, no separating good from broken.</li>
+<li><strong>Our side:</strong> collect, grade at our North Geelong yard, repair sound pallets for return to service, shred the rest into mulch, fibre and feedstock.</li>
+<li><strong>Reporting:</strong> pallets and tonnes collected, reused and recycled, per site, per period.</li>
+</ul>
+</section>
+<section>
+<h3>Commercial structure</h3>
+<ul>
+<li>Modelled against these volumes and your actual pallet mix following a site assessment.</li>
+<li>A trial period with a sample-load grade, so the reusable share in the agreement is the real one.</li>
+</ul>
+</section>
+<section>
+<h3>Next steps</h3>
+<ul>
+<li>Site assessment booked at your convenience.</li>
+<li>Equipment positioned and first collection scheduled.</li>
+<li>First-month review of volumes and reusable share.</li>
+</ul>
+<p class="sig">Figures are estimates from the volumes entered, assuming an average pallet weight of 25 kg. Not accepted: asbestos and hazardous waste.</p>
+</section>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+</main>
+<section class="tc-dir"><div class="wrap">
+  <div class="tc-dir-g">
+    <div><div class="eyebrow">Timbercycle</div>
+      <p class="tc-dir-lead">Timber pallet recovery, reuse and recycling at scale. Timber only. Victoria first.</p>
+      <ul class="tc-dir-l"><li><a href="tel:134455">13 44 55</a> · <a href="tel:0433225511">0433 225 511</a></li>
+      <li><a href="mailto:info@timbercycle.com.au">info@timbercycle.com.au</a></li>
+      <li>116 Furner Avenue, North Geelong VIC</li></ul></div>
+    <div><div class="fh">What we do</div><ul class="tc-dir-l">
+      <li><a href="pallet-recovery.html">Pallet recovery &amp; reuse</a></li><li><a href="timber-recycling.html">Timber recycling &amp; mulch</a></li>
+      <li><a href="bulk-pallet-programs.html">Bulk pallet programs</a></li><li><a href="pallet-calculator.html">Pallet calculator</a></li>
+      <li><a href="program-builder.html">Program builder</a></li><li><a href="products.html">Products</a></li>
+      <li><a href="faq.html">Questions</a></li><li><a href="capability-statement.html">Capability statement</a></li><li><a href="about.html">About Timbercycle</a></li></ul></div>
+    <div><div class="fh">Industries</div><ul class="tc-dir-l">
+      <li><a href="for-ports-and-shipping.html">Ports &amp; shipping</a></li><li><a href="for-freight-and-3pl.html">Freight &amp; 3PL</a></li>
+      <li><a href="for-distribution-centres.html">Distribution centres</a></li><li><a href="for-manufacturers.html">Manufacturers</a></li>
+      <li><a href="for-councils-and-transfer-stations.html">Councils &amp; transfer stations</a></li></ul></div>
+    <div><div class="fh">Where we collect</div><ul class="tc-dir-l">
+      <li><a href="pallet-collection-melbourne.html">Melbourne</a></li><li><a href="pallet-collection-geelong.html">Geelong</a></li>
+      <li><a href="pallet-collection-laverton-altona.html">Laverton &amp; Altona</a></li><li><a href="pallet-collection-truganina-derrimut.html">Truganina &amp; Derrimut</a></li>
+      <li><a href="pallet-collection-dandenong.html">Dandenong</a></li></ul></div>
+  </div>
+</div></section>
+<footer class="site"><div class="wrap">
+  <div class="fgrid">
+    <div><a href="https://recycle.net.au/"><img class="logo-img" src="assets/recycle-logo.svg" alt="Recycle Group" width="519" height="82"></a>
+      <p class="fdesc">Recycling solutions for councils, governments, corporations and infrastructure operators, designed, operated and reported on the group's own collection, transfer, processing and reuse infrastructure.</p>
+      <ul class="flist" style="margin-top:18px"><li><a href="mailto:info@recycle.net.au">info@recycle.net.au</a></li><li><a href="https://recycle.net.au/contact/">Let's work together</a></li></ul></div>
+    <div class="fsites"><div class="fh">Our sites</div>
+      <div class="fsite"><b>Melbourne office</b><span>Level 2/530 Lonsdale Street<br>Melbourne VIC 3000</span></div>
+      <div class="fsite"><b>Sydney office</b><span>Suite 1.01, Level 1, 222 Pitt Street<br>Sydney NSW 2000</span></div>
+      <div class="fsite"><b>Canberra office</b><span>Ground Floor, 490 Northbourne Avenue<br>Dickson ACT 2602</span></div>
+      <div class="fsite"><b>Recycle Resource Recovery Centres</b><span>116 Furner Avenue<br>North Geelong VIC 3215</span><em>Transfer station · The Mattress Recycling Company · Styro · Timbercycle</em></div>
+    </div>
+    <div><div class="fh">Company</div><ul class="flist"><li><a href="https://recycle.net.au/solutions/">Solutions</a></li><li><a href="https://recycle.net.au/approach/">Our approach</a></li><li><a href="https://recycle.net.au/who-we-work-with/">Sectors</a></li><li><a href="https://recycle.net.au/infrastructure/">Infrastructure</a></li><li><a href="https://recycle.net.au/materials/">Materials</a></li><li><a href="https://recycle.net.au/reporting/">Reporting</a></li><li><a href="https://recycle.net.au/assurance/">Assurance</a></li><li><a href="https://recycle.net.au/scale/">Scale</a></li><li><a href="https://recycle.net.au/about/">Leadership</a></li></ul></div>
+    <div><div class="fh">The group</div><ul class="flist"><li><a href="https://recycle.net.au/the-group/">Our businesses</a></li><li><a href="https://recycle.net.au/initiatives/">Upcoming initiatives</a></li><li><a href="https://recycle.net.au/impact/">Impact dashboard</a></li><li><a href="index.html">Timbercycle</a></li></ul></div>
+  </div>
+  <div class="fmeta"><span>© 2026 Recycle Group Pty Ltd · Timbercycle is a Recycle Group business</span><span>Responsible recovery. Sustainable outcomes.</span></div>
+</div></footer>
+<script>
+(function(){var t=document.getElementById('navToggle'),l=document.getElementById('navLinks');if(!t||!l)return;t.addEventListener('click',function(){var o=l.classList.toggle('open');t.setAttribute('aria-expanded',o?'true':'false');});})();
+(function(){var b=document.querySelector('.tc-bar-links .is-cur,.tc-bar-links [aria-current]');if(b&&b.scrollIntoView&&innerWidth<1100){var L=b.parentNode;L.scrollLeft=b.getBoundingClientRect().left-L.getBoundingClientRect().left-24;}})();
+</script>
+<script src="assets/site.js"></script>
+<script src="assets/polish.js" defer></script>
+</body>
+</html>

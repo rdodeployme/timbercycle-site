@@ -1,0 +1,162 @@
+/* Timbercycle in the Recycle Group design system.
+   Loaded after main.css (Recycle Group) and timbercycle.css (scoped Timbercycle components).
+   Palette: RG dark #0E1114 / #14181C / #1C2126, light #F1F0EC / #E8E6E0, copper #C2804F (on dark), #7A4E2F (on light). */
+
+/* ---------- tokens ---------- */
+.tc{
+  --ink:#0E1114;--ink-2:#14181C;--ink-3:#1C2126;
+  --timber:#C2804F;--timber-2:#7A4E2F;--timber-soft:#EADBCB;
+  --wood:#C2804F;--wood-2:#5E3A22;
+  --paper:#F1F0EC;--wash:#E8E6E0;
+  --text:#1E2226;--muted:#565B60;--line:#D3D0C9;--line-dark:rgba(238,241,243,.12);
+  --maxw:1440px;--pad:clamp(22px,5.5vw,104px);
+  background:var(--paper);color:var(--text);
+  font-family:var(--body);font-size:17px;line-height:1.6;
+}
+.tc .t-wrap{max-width:var(--maxw);padding:0 var(--pad)}
+
+/* ---------- type: Archivo display, uppercase headlines like recycle.net.au ---------- */
+.tc h1,.tc h2,.tc h3,.tc h4,.tc .display{font-family:var(--display);text-wrap:balance}
+.tc h1{font-weight:700;text-transform:uppercase;letter-spacing:-.025em;line-height:.96;font-size:clamp(36px,5.4vw,84px)}
+.tc h2{font-weight:700;letter-spacing:-.03em;line-height:1.02;font-size:clamp(30px,4.2vw,58px)}
+.tc h3{font-weight:600;letter-spacing:-.01em;line-height:1.15}
+.tc .t-lead{font-size:clamp(17px,1.3vw,19px);line-height:1.55;color:var(--muted);max-width:56ch}
+.tc .t-dark .t-lead,.tc .t-hero .t-lead{color:rgba(238,241,243,.72)}
+
+/* eyebrow: small caps label with a copper rule, as on recycle.net.au */
+.tc .t-eyebrow{font-family:var(--display);font-weight:600;font-size:11px;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--muted);display:flex;align-items:center;gap:12px;margin:0 0 20px}
+.tc .t-eyebrow::before{content:"";width:22px;height:1px;background:var(--timber);flex:none}
+.tc .t-dark .t-eyebrow,.tc .t-hero .t-eyebrow,.tc .t-cta .t-eyebrow{color:rgba(238,241,243,.6)}
+
+/* ---------- surfaces ---------- */
+.tc .t-dark,.tc .t-hero,.tc .t-cta{--muted:rgba(238,241,243,.62);--line:rgba(238,241,243,.12)}
+.tc .section{background:var(--paper)}
+.tc .t-wash,.tc .section.t-wash{background:var(--wash)}
+.tc .t-dark,.tc .section.t-dark{background:#0E1114;color:rgba(238,241,243,.78)}
+.tc .t-dark h1,.tc .t-dark h2,.tc .t-dark h3{color:#EEF1F3}
+.tc .t-dark .t-card{background:#14181C;border-color:rgba(238,241,243,.12)}
+
+/* ---------- buttons: square, small caps, arrow ---------- */
+.tc .t-btn{font-family:var(--display);font-weight:600;font-size:12px;letter-spacing:.14em;text-transform:uppercase;
+  padding:16px 24px;border-radius:0;border:1px solid transparent;gap:12px;line-height:1.2}
+.tc a.t-btn::after{content:"→"}
+.tc .btn--primary{background:var(--timber);border-color:var(--timber);color:#0E1114}
+.tc .btn--primary:hover{background:transparent;border-color:currentColor;color:var(--text)}
+.tc .t-dark .btn--primary:hover,.tc .t-hero .btn--primary:hover,.tc .t-cta .btn--primary:hover{color:#EEF1F3;border-color:#EEF1F3}
+.tc .btn--outline{border-color:var(--text);color:var(--text);background:transparent}
+.tc .btn--outline:hover{background:var(--text);color:var(--paper)}
+.tc .t-dark .btn--outline{border-color:#EEF1F3;color:#EEF1F3}
+.tc .t-dark .btn--outline:hover{background:#EEF1F3;color:#0E1114}
+.tc .btn--ghost{border-color:rgba(238,241,243,.4);color:#EEF1F3}
+.tc .btn--ghost:hover{background:#EEF1F3;color:#0E1114;border-color:#EEF1F3}
+.tc .btn--dark{background:#0E1114;border-color:#0E1114;color:#EEF1F3}
+.tc .btn--dark:hover{background:transparent;color:#0E1114}
+.tc button.t-btn{cursor:pointer}
+
+/* ---------- page hero: dark, desaturated photo, RG shade ---------- */
+.tc .t-hero{background:#0E1114;color:#EEF1F3;border-bottom:1px solid rgba(238,241,243,.1)}
+.tc .t-hero .hero__media img{opacity:.62;filter:saturate(.4) contrast(.95)}
+.tc .t-hero::after{background:linear-gradient(90deg,rgba(14,17,20,.94) 0%,rgba(14,17,20,.74) 48%,rgba(14,17,20,.38) 100%),linear-gradient(0deg,rgba(14,17,20,.9) 0%,rgba(14,17,20,0) 45%)}
+.tc .t-hero .hero__in{max-width:var(--maxw);padding-left:var(--pad);padding-right:var(--pad)}
+.tc .t-hero h1{color:#EEF1F3;max-width:16ch}
+.tc .t-hero h1 .tan,.tc .tan{color:var(--timber)}
+.tc .section:not(.t-dark) .statement .tan,.tc .t-wash .tan{color:var(--timber-2)}
+.tc .hero-tile{border-radius:0;background:rgba(238,241,243,.04);border-color:rgba(238,241,243,.12)}
+.tc .hero-tile b{font-family:var(--display);color:var(--timber)}
+.tc-crumb{font-family:var(--display);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:rgba(238,241,243,.42);display:flex;flex-wrap:wrap;gap:10px;margin-bottom:22px}
+.tc-crumb a:hover{color:#EEF1F3}
+
+/* home hero keeps the yard animation, in RG colours */
+.tc .hero--yard{background:#0E1114}
+.tc .hero--yard h1{max-width:13ch}
+.tc .mini{border-radius:0;background:rgba(238,241,243,.04);border-color:rgba(238,241,243,.14)}
+.tc .mini input{border-radius:0;font-family:var(--display)}
+.tc .mini__out b{font-family:var(--display);color:var(--timber)}
+
+/* ---------- closing CTA band, as on recycle.net.au ---------- */
+.tc .t-cta{position:relative;overflow:hidden;background:#0E1114;color:#EEF1F3;border-top:1px solid rgba(238,241,243,.1)}
+.tc .t-cta::before{content:"";position:absolute;inset:0;background:url(../img/stack.webp) center 55%/cover;filter:saturate(.35) blur(1.5px);opacity:.55}
+.tc .t-cta::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(14,17,20,.95) 0,rgba(14,17,20,.84) 50%,rgba(14,17,20,.6) 100%)}
+.tc .t-cta>.t-wrap{position:relative;z-index:1}
+.tc .cta__in{padding:clamp(72px,9vw,130px) 0}
+.tc .t-cta h2{color:#EEF1F3;max-width:18ch}
+.tc .t-cta p{color:rgba(238,241,243,.7)}
+
+/* ---------- cards, tiles, panels: square, hairline ---------- */
+.tc .t-card,.tc .metric,.tc .audience div{border-radius:0}
+.tc .stream__num,.tc .metric b,.tc .t-big{font-family:var(--display)}
+.tc .t-steps li::before{font-family:"IBM Plex Mono",ui-monospace,monospace;font-weight:600;font-size:.9rem;letter-spacing:.04em}
+.tc .ticks li::before{border-radius:0;width:9px;height:9px}
+.tc input,.tc select,.tc textarea{border-radius:0}
+.tc input[type=range]{accent-color:var(--timber)}
+.tc .calc__panel{top:150px}
+@media (min-width:921px){.tc .calc__panel{max-height:calc(100vh - 170px)}}
+.tc .panel-live div{border-radius:0}
+.tc .panel-live b{font-family:var(--display)}
+.tc .split__media img,.tc .product img{border-radius:0;filter:saturate(.75)}
+.tc details summary{font-family:var(--display)}
+
+/* ---------- Timbercycle section bar (sits under the RG nav) ---------- */
+.tc-bar{position:sticky;top:74px;z-index:90;background:#14181C;border-bottom:1px solid rgba(238,241,243,.1)}
+.tc-bar .wrap{display:flex;align-items:center;gap:28px;height:56px;padding-left:32px;padding-right:32px}
+.tc-bar-brand{display:flex;flex-direction:column;justify-content:center;flex:none;padding-right:26px;border-right:1px solid rgba(238,241,243,.14);height:100%}
+.tc-bar-brand b{font-family:var(--display);font-weight:800;font-size:15px;letter-spacing:.06em;text-transform:uppercase;color:#EEF1F3;line-height:1}
+.tc-bar-brand span{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;color:#C2804F;margin-top:5px}
+.tc-bar-links{display:flex;gap:22px;overflow-x:auto;scrollbar-width:none;flex:1;min-width:0;height:100%;align-items:center}
+.tc-bar-links::-webkit-scrollbar{display:none}
+.tc-bar-links a{font-family:var(--display);font-weight:600;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:rgba(238,241,243,.62);white-space:nowrap;padding:6px 0;border-bottom:1px solid transparent;transition:color .2s,border-color .2s}
+.tc-bar-links a:hover{color:#EEF1F3}
+.tc-bar-links a[aria-current]{color:#EEF1F3;border-bottom-color:#C2804F}
+.tc-bar-cta{flex:none;font-family:var(--display);font-weight:600;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#0E1114;background:#C2804F;padding:10px 14px;border:1px solid #C2804F}
+.tc-bar-cta:hover{background:transparent;color:#EEF1F3;border-color:#EEF1F3}
+@media (max-width:1400px){.tc-bar-links{gap:16px}.tc-bar-links a{font-size:10.5px;letter-spacing:.09em}}
+@media (max-width:900px){
+  .tc-bar .wrap{gap:16px;padding-left:20px;padding-right:0;height:52px}
+  .tc-bar-brand{padding-right:16px}
+  .tc-bar-brand b{font-size:13px}
+  .tc-bar-cta{display:none}
+  .tc-bar-links{padding-right:20px}
+  .tc .calc__panel{top:auto}
+}
+
+/* ---------- Timbercycle directory (above the RG footer) ---------- */
+.tc-dir{background:#14181C;border-top:1px solid rgba(238,241,243,.1);padding:64px 0 56px;color:rgba(238,241,243,.72)}
+.tc-dir-g{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:40px}
+.tc-dir .eyebrow{margin-bottom:16px}
+.tc-dir-lead{font-family:var(--display);font-weight:600;font-size:clamp(20px,1.8vw,26px);line-height:1.2;letter-spacing:-.01em;color:#EEF1F3;max-width:22ch;margin:0 0 20px}
+.tc-dir .fh{margin-bottom:14px}
+.tc-dir-l{list-style:none;margin:0;padding:0;display:grid;gap:9px;font-size:14px}
+.tc-dir-l a{color:rgba(238,241,243,.72);transition:color .2s}
+.tc-dir-l a:hover{color:#C2804F}
+@media (max-width:1000px){.tc-dir-g{grid-template-columns:1fr 1fr}}
+@media (max-width:640px){.tc-dir-g{grid-template-columns:1fr}}
+
+/* ---------- fixes found in QA ---------- */
+/* grade cards sit in a dark section: make them dark tiles */
+.tc .t-dark .grade{background:#14181C;border-color:rgba(238,241,243,.12)}
+.tc .t-dark .grade__k{color:#EEF1F3}
+.tc .t-dark .grade--c .grade__k{color:rgba(238,241,243,.45)}
+.tc .t-dark .grade--b .grade__bar{background:linear-gradient(90deg,var(--timber) 0 55%,rgba(238,241,243,.18) 55% 100%)}
+.tc .t-dark .grade--c .grade__bar{background:rgba(238,241,243,.18)}
+.tc .t-dark .grade__to{color:var(--timber)}
+.tc .grade{border-radius:0}
+/* big copper numerals on light surfaces: a deeper copper so they hold contrast */
+.tc .stream__num{color:#A56A3D}
+.tc .t-dark .stream__num{color:var(--timber)}
+/* the calculator's headline figure is a dark panel */
+.tc .metric.metric--hero{background:#0E1114!important;border-color:#0E1114!important}
+.tc .metric.metric--hero .metric__l{color:rgba(238,241,243,.68)}
+.tc .metric__n{font-family:var(--display)}
+.tc .example .metric{background:#14181C!important;border-color:rgba(238,241,243,.12)!important}
+.tc .example .metric__n{color:#EEF1F3}
+.tc .example .metric__l{color:rgba(238,241,243,.62)}
+
+.tc .sheet__head .t-eyebrow{color:rgba(238,241,243,.6)}
+
+/* home hero: stack the animation above the copy on narrow screens */
+@media (max-width:980px){.tc .yard-grid{grid-template-columns:minmax(0,1fr)}.tc .yard-anim{order:-1;max-width:620px;margin:0 auto 8px;width:100%}}
+@media (max-width:640px){.tc .mini{grid-template-columns:minmax(0,1fr)}.tc .mini__go{grid-column:auto}}
+
+/* print (capability statement, program builder) */
+@media print{.tc-bar,nav.top,.tc-dir,footer.site,.pz-bar{display:none!important}.tc{background:#fff}}
