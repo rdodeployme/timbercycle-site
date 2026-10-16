@@ -5,7 +5,7 @@ Takes the Timbercycle pages in the repo root, keeps their content, and wraps eac
 one in the Recycle Group chrome (recycle.net.au nav, footer, type and colours).
 
   python3 rg-build/build.py preview   -> ./rg/            (GitHub Pages preview, links to recycle.net.au)
-  python3 rg-build/build.py install   -> ./rg-build/out/timbercycle/  (drop into the recycle.net.au repo at /timbercycle/)
+  python3 rg-build/build.py install   -> ./rg-build/out/timbercycle/  (copy to docs/timbercycle/ in the rdodeployme/recycle-group repo)
 """
 import re, sys, shutil, html
 from pathlib import Path
@@ -23,10 +23,10 @@ if MODE == 'preview':
     POLISH = 'assets/polish.js'
 else:
     OUT = HERE / 'out' / 'timbercycle'
-    RG = ''                                # root-relative inside recycle.net.au
-    CSS_MAIN = '/css/main.css?v=4'
-    RG_LOGO = '/img/recycle-logo.svg'
-    POLISH = '/js/polish.js'
+    RG = '/recycle-group'                  # recycle-group repo, served from docs/ at /recycle-group/
+    CSS_MAIN = RG + '/css/main.css?v=4'
+    RG_LOGO = RG + '/img/recycle-logo.svg'
+    POLISH = RG + '/js/polish.js'
 
 # classes Timbercycle shares with the RG stylesheet -> renamed so the two never fight
 COLLIDE = ['big', 'btn', 'card', 'cards', 'cmp', 'cta', 'dark', 'eyebrow', 'hero', 'lead', 'note',
@@ -277,6 +277,7 @@ def build_page(path):
         hin.insert(0, BeautifulSoup(crumb, 'html.parser'))
     inner = main.decode_contents()
     is_home = path.name == 'index.html'
+    robots = '<meta name="robots" content="noindex">\n' if MODE == 'preview' else ''
     body = f'''<!DOCTYPE html>
 <html lang="en-AU">
 <head>
@@ -284,8 +285,7 @@ def build_page(path):
 <title>{html.escape(page_title)}</title>
 <meta name="description" content="{html.escape(desc, quote=True)}">
 <meta property="og:title" content="{html.escape(page_title, quote=True)}"><meta property="og:description" content="{html.escape(desc, quote=True)}"><meta property="og:type" content="website">
-<meta name="robots" content="noindex">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+{robots}<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=IBM+Plex+Mono:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{CSS_MAIN}">
 <link rel="stylesheet" href="assets/timbercycle.css">
